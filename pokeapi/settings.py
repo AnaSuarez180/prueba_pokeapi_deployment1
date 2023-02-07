@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+from pymongo import MongoClient
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,12 +77,19 @@ WSGI_APPLICATION = 'pokeapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'pokeapi_co_db',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'pokeapi_co_db',
+#     }
+# }
+
+
+client = MongoClient("mongodb+srv://AnaSofia:<suarez18>@cluster0.8oonywi.mongodb.net/?retryWrites=true&w=majority")
+db = client["pokeapi_co_db"]
+collection_name = "test_collection"
+collection = db[collection_name]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
