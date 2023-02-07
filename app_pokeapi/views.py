@@ -43,7 +43,7 @@ from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def pokemon_list(request):
-    client = MongoClient('mongodb://localhost:27017/')
+    client = MongoClient('mongodb+srv://AnaSofia:<suarez18>@cluster0.8oonywi.mongodb.net/?retryWrites=true&w=majority')
     db = client['pokeapi_co_db']
     collection = db['pokemon_v2_pokemon']
     pokemons = list(collection.find({}))
@@ -90,7 +90,7 @@ def pokemon_list(request):
     return JsonResponse(response)
 
 def pokedex_list(request):
-    client = MongoClient('mongodb://localhost:27017/')
+    client = MongoClient('mongodb+srv://AnaSofia:<suarez18>@cluster0.8oonywi.mongodb.net/?retryWrites=true&w=majority')
     db = client['pokeapi_co_db']
     collection = db['pokemon_v2_pokedex']
     pokedexs = list(collection.find({}))
@@ -137,7 +137,7 @@ def pokedex_list(request):
     return JsonResponse(response)
 
 def pokemon_by_id_name(request, pokemon_identifier):
-    client = MongoClient('mongodb://localhost:27017/')
+    client = MongoClient('mongodb+srv://AnaSofia:<suarez18>@cluster0.8oonywi.mongodb.net/?retryWrites=true&w=majority')
     db = client['pokeapi_co_db']
     collection = db['pokemon_v2_pokemon']
     
@@ -156,7 +156,7 @@ def pokemon_by_id_name(request, pokemon_identifier):
     return JsonResponse({'pokemon': pokemon})
 
 def pokedex_by_id_name(request, pokedex_identifier):
-    client = MongoClient('mongodb://localhost:27017/')
+    client = MongoClient('mongodb+srv://AnaSofia:<suarez18>@cluster0.8oonywi.mongodb.net/?retryWrites=true&w=majority')
     db = client['pokeapi_co_db']
     collection = db['pokemon_v2_pokedex']
     
