@@ -138,7 +138,7 @@ def pokedex_list(request):
     return JsonResponse(response)
 
 def pokemon_by_id_name(request, pokemon_identifier):
-    client = MongoClient('mongodb+srv://AnaSofia:<suarez18>@cluster0.8oonywi.mongodb.net/?retryWrites=true&w=majority')
+    client = MongoClient('mongodb+srv://AnaSofia:suarez18@cluster0.8oonywi.mongodb.net/?retryWrites=true&w=majority')
     db = client['pokeapi_co_db']
     collection = db['pokemon_v2_pokemon']
     
